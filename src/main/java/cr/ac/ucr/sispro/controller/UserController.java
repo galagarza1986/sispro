@@ -1,10 +1,7 @@
 package cr.ac.ucr.sispro.controller;
 
 import cr.ac.ucr.sispro.model.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/sispro")
@@ -18,6 +15,11 @@ public class UserController {
     @GetMapping("/{id}")
     public User findById(@PathVariable Integer id){
         return new User(1,"Lola");
+    }
+
+    @PostMapping
+    public User addUser(@RequestBody User user){
+        return new User(1,"lola");
     }
 
 }
